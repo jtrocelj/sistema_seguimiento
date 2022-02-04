@@ -7,7 +7,7 @@
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('main.name', 'SIS VTA. & FACT.') }}</title>
+        <title>{{ config('main.name', 'SIS | Trabajo De Grado') }}</title>
         <!-- Favicon -->
         <link href="{{ asset('img/brand/favicon.png') }}" rel="icon" type="image/png">
         <!-- Fonts -->
@@ -19,7 +19,7 @@
         <link href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
         <!-- Argon CSS -->
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
-        @livewireStyles
+    
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -34,10 +34,6 @@
             @yield('content')
         </div>
 
-        @guest()
-            @include('layouts.footers.guest')
-        @endguest
-       
 
         
       
@@ -47,6 +43,6 @@
         <!-- Argon JS -->
          
 
-        @livewireScripts
+        
     </body>
 </html>

@@ -9,7 +9,7 @@
   <meta name="author" content="Creative Tim">
  
   <!-- Favicon -->
-  <link href="{{ asset('img/brand/favicon.png') }}" rel="icon" type="image/png">
+  <link href="{{ asset('img/brand/blue.png') }}" rel="icon" type="image/png" >
   
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
@@ -19,7 +19,7 @@
   <!-- Argon CSS -->
   <link rel="stylesheet" href="../assets/css/argon.css?v=1.2.0" type="text/css">
 </head>
-<title>{{ config('main.name', 'SIS VTA. & FACT.') }}</title>
+<title>{{ config('main.name', 'SIS | Trabajo De Grado') }}</title>
 <body>
   
   <!-- Main content -->

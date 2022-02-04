@@ -6,15 +6,15 @@
     <div class="container-fluid mt--9">
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-7">
-                <div class="card bg-secondary shadow border-0">
+                <div class="card bg-secondary shadow border-0" style="margin-top: -50px;">
                     
-                    <div class="card-body px-lg-5 py-lg-5">
+                    <div class="card-body px-lg-5 py-lg-5" >
                         <div class="text-center text-muted mb-4">
                        
-                            <img src="{{ asset('img/brand/favicon.png') }}"  width="100px">
+                            <img src="{{ asset('img/brand/blue.png') }}"  width="200px" style="margin-top: -50px;">
                              
                         </div>
-                        <form role="form" method="POST" action="{{ route('login') }}">
+                        <form role="form" method="POST" action="{{ route('login') }}" >
                             @csrf
                             
                             
@@ -64,4 +64,5 @@
             </div>
         </div>
     </div>
+    
 @endsection
