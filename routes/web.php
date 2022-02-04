@@ -78,3 +78,5 @@ Route::get("pdf", "App\Http\Controllers\ReportController@pdf")->name("pdf");
 Route::post("pdfDate", "App\Http\Controllers\ReportController@pdfDate")->name("pdfDate");
 
 Route::get("excel", "App\Http\Controllers\ReportController@excel")->name("excel");
+
+Route::resource('mail','App\Http\Controllers\MailController');
