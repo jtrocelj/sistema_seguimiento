@@ -6,6 +6,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\EnviarMail;
+
 /**
  * Class UserController
  * @package App\Http\Controllers
@@ -67,8 +70,13 @@ class UserController extends Controller
         $roles = $request->input('rol', []);
         $user->syncRoles($roles);
 
+        $correo = $request->input('email');
+        $contraseña = $request->input('password');
+        Mail::to($correo)
+        ->send(new EnviarMail($user,$contraseña));
+
         return redirect()->route('users.index')
-        ->with('success', 'Usuario registrado exitosamente');
+        ->with('success', 'Se registro el usuario exitosamente y se envió las credenciales de ingreso a su correo');
     }
      /**
      * Get a validator for an incoming registration request.

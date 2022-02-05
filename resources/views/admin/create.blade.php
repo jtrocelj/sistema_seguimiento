@@ -1,5 +1,5 @@
 @extends('layouts.main', ['title' => __('User Profile')])
-@include('layouts.headers.cards2')
+@include('layouts.headers.cards')
 @section('content')
     
 
