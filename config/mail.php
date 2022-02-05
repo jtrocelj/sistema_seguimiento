@@ -93,7 +93,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'jtrocelj@est.emi.edu.bo'),
-        'name' => env('MAIL_FROM_NAME', 'No-reply@resetear.com'),
+        'name' => env('MAIL_FROM_NAME', 'No-reply'),
     ],
 
     /*
