@@ -22,7 +22,11 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
- <!-- Main content -->
+
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Main content -->
  <div class="main-content" id="panel">
     <div class="header bg-primary pb-6">
       <div class="container-fluid">
@@ -43,12 +47,24 @@
     <!-- Page content -->
     <div class="container-fluid mt--9 ">
      
-
-
-
-
-    
-          
+                                      @if (Session::get('registroDocente'))
+                                        <script>
+                                          Swal.fire(
+                                              'Satisfactorio',
+                                              'Docente creado exitosamente.',
+                                              'success'
+                                          )
+                                        </script>
+                                      @endif
+                                      @if (Session::get('editar'))
+                                        <script>
+                                          Swal.fire(
+                                              'Satisfactorio',
+                                              'Docente actualizado exitosamente.',
+                                              'success'
+                                          )
+                                        </script>
+                                      @endif
           
             <!-- Dark table -->
             <div class="card" style="margin-top: -50px;" >
@@ -87,8 +103,12 @@
                                                                             <td  style="background:#172B4D;"class="text-center">{{$d->nombres}}</td>
                                                                             <td style="background:#172B4D;" class="text-center ">{{$d->apellidos}}</td>
                                                                             <td style="background:#172B4D;" class="text-center ">{{$d->email}}</td>
-                                                                            <td style="background:#172B4D;" class="text-center ">{{$d->image}}</td>
-                                                                            <td class="text-center">
+                                                                            <td style="background:#172B4D;" class="text-center ">
+                                                                            <span>
+                                                                            <img src="{{asset('storage/docente/' .$d->image)}}" class="navbar-brand-img  rounded-circle" height="60" width="60px" >
+                                                                            </span>     
+                                                                            </td>
+                                                                            <td style="background:#172B4D;"class="text-center">
                                                                         
                                                                            
                                                                               <a class="btn btn-sm btn-success" href="#" data-toggle="modal" data-target="#ModalEditDocente{{$d->id}}">
@@ -181,7 +201,7 @@
     "autoWidth": true,
     "language": idioma,
     "lengthMenu": [[5,10,20, -1],[5,10,50,"Mostrar Todo"]],
-    "order": [[ 0, "desc" ]]
+    "order": [[ 0, "asc" ]]
      
     } );
 } );
