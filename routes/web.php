@@ -80,3 +80,6 @@ Route::post("pdfDate", "App\Http\Controllers\ReportController@pdfDate")->name("p
 Route::get("excel", "App\Http\Controllers\ReportController@excel")->name("excel");
 
 Route::resource('mail','App\Http\Controllers\MailController');
+
+Route::get('docente', 'App\Http\Controllers\DocenteController@index')->middleware('auth')->name('docente.index');
+Route::resource('docente',App\Http\Controllers\DocenteController::class)->middleware('auth');

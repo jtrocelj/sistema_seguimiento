@@ -6,20 +6,12 @@
 <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
+
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  <!-- Main content -->
  <div class="main-content" id="panel">
- <script type="text/javascript">
-        function confirmarEliminar(){
-            var res = confirm("Estas seguro que deseas eliminar al usuario?");
-            if(res == true){
-                
-                return true;
-                
-            }else{
-                return false;
-            }
-        }
-    </script>
+ 
     <div class="header bg-primary pb-6">
       <div class="container-fluid">
         <div class="header-body">
@@ -39,17 +31,38 @@
           <div class="card bg-default shadow">
             <div class="card-header bg-transparent border-0">
               <h3 class="text-white mb-0">Tabla de usuarios</h3>
+            
             </div>
             <div class="table-responsive">
             @include("notificacion")
-                                        @if ($message = Session::get('success'))
-                                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                                <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
-                                                <span class="alert-inner--text"> <p>{{ $message }}</p>
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                              </div>
+                                        @if (Session::get('editar'))
+                                          <script>
+                                            Swal.fire(
+                                                'Satisfactorio',
+                                                'Usuario actualizado exitosamente',
+                                                'success'
+                                            )
+                                          </script>
+                                        @endif
+                                        @if (Session::get('eliminar'))
+                                          <script>
+                                            Swal.fire(
+                                                'Satisfactorio',
+                                                'Usuario eliminado exitosamente',
+                                                'success'
+                                            )
+                                          </script>
+                                        @endif
+                                        @if (Session::get('registro'))
+                                        
+
+                                          <script>
+                                            Swal.fire(
+                                                'Satisfactorio',
+                                                'Se registro el usuario exitosamente y se envió las credenciales de ingreso a su correo.',
+                                                'success'
+                                            )
+                                          </script>
                                         @endif
 
                                            

@@ -61,6 +61,30 @@
           <div style="margin-top:-75px;">
                 <!-- Navigation -->
             <ul class="navbar-nav"><br>
+          
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('docente.index')}}">
+                    <i class="fa fa-university" aria-hidden="true" style="color:#00008B;"></i>{{ __('Docentes') }}
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" >
+                    <i class="fa fa-graduation-cap" aria-hidden="true" style="color:#00008B;"></i>{{ __('Tutor') }}
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" >
+                    <i class="fa fa-address-book" aria-hidden="true" style="color:#00008B;"></i>{{ __('Revisor') }}
+                    </a>
+                </li>
+               
+                <li class="nav-item">
+                    <a class="nav-link" >
+                    <i class="fa fa-user-plus" aria-hidden="true" style="color:#00008B;"></i>{{ __('Estudiantes') }}
+                    </a>
+                </li>
                 @can('Categorias')
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('categoria.index')}}">
@@ -120,7 +144,7 @@
                 @can('Usuarios')
                 <li class="nav-item">
                     <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
-                        <i class="ni ni-circle-08 " style="color:#00008B;"></i>
+                        <i class="fa fa-users " style="color:#00008B;"></i>
                         <span class="nav-link-text" >{{ __('Usuarios') }}</span>
                     </a>
                

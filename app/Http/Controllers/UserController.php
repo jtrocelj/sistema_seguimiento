@@ -76,7 +76,7 @@ class UserController extends Controller
         ->send(new EnviarMail($user,$contraseña));
 
         return redirect()->route('users.index')
-        ->with('success', 'Se registro el usuario exitosamente y se envió las credenciales de ingreso a su correo');
+        ->with('registro','Se registro el usuario exitosamente y se envió las credenciales de ingreso a su correo.');
     }
      /**
      * Get a validator for an incoming registration request.
@@ -140,7 +140,7 @@ class UserController extends Controller
         $user->save();
 
         return redirect()->route('users.index')
-        ->with('success', 'Usuario actualizado exitosamente');
+        ->with('editar', 'Usuario actualizado exitosamente');
     }
     /**
      * @param int $id
@@ -156,7 +156,7 @@ class UserController extends Controller
         $user->delete();
 
         return redirect()->route('users.index')
-            ->with('success', 'Usuario eliminado exitosamente');
+            ->with('eliminar', 'Usuario eliminado exitosamente');
            
     }
 }
