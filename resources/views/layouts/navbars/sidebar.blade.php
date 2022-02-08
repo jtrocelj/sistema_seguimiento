@@ -1,3 +1,97 @@
+<style>
+   /*
+    DEMO STYLE
+*/
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+ 
+
+  transition: all 0.3s;
+}
+
+#sidebar a,
+#sidebar a:hover,
+#sidebar a:focus {
+  color: inherit;
+}
+
+#sidebar.active {
+  margin-left: -250px;
+}
+
+
+
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+}
+
+#sidebar ul li a:hover {
+  color: #7386d5;
+  background: #fff;
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+  color: #fff;
+
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+a[aria-expanded="false"]::before,
+a[aria-expanded="true"]::before {
+  content: "\e259";
+  display: block;
+  position: absolute;
+  right: 20px;
+  font-family: "Glyphicons Halflings";
+  font-size: 0.6em;
+}
+
+a[aria-expanded="true"]::before {
+  content: "\e260";
+}
+
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  
+}
+
+
+
+</style>
 
  
 <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
@@ -62,18 +156,44 @@
                 <!-- Navigation -->
             <ul class="navbar-nav"><br>
           
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('docente.index')}}">
-                    <i class="fa fa-university" aria-hidden="true" style="color:#00008B;"></i>{{ __('Docentes') }}
-                    </a>
+            <li class="nav-item">
+                
+                        <ul class=" list-unstyled components">
+                            <li class="active">
+                                <a class="nav-link active" href="#homeSubmenu" data-toggle="collapse"  role="button" aria-expanded="false">
+                                <i class="fa fa-university" style="color:#00008B;"></i>
+                                <span class="nav-link-text" >{{ __('Docentes') }}</span>
+                                </a>
+                                <ul class="collapse list-unstyled" id="homeSubmenu">
+                                <li nav-item><a  class="nav-link" href="{{route('docente.index')}}">{{ __('Listado') }}</a></li>
+                                <li nav-item><a  class="nav-link" href="#">{{ __('Datos Personales') }}</a></li>
+                               
+                                </ul>
+                            </li>
+                          
+                        </ul>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" >
-                    <i class="fa fa-graduation-cap" aria-hidden="true" style="color:#00008B;"></i>{{ __('Tutor') }}
-                    </a>
-                </li>
+                
+                <ul class=" list-unstyled components">
+                    <li class="active">
+                        <a class="nav-link active" href="#homeSubmenu22" data-toggle="collapse"  role="button" aria-expanded="false">
+                        <i class="fa fa-graduation-cap" style="color:#00008B;"></i>
+                        <span class="nav-link-text" >{{ __('Tutor') }}</span>
+                        </a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu22">
+                        <li nav-item><a  class="nav-link" >{{ __('Listado') }}</a></li>
+                        <li nav-item><a  class="nav-link" href="#">{{ __('Datos Personales') }}</a></li>
+                       
+                        </ul>
+                    </li>
+                  
+                </ul>
+        </li>
+              
 
+                
                 <li class="nav-item">
                     <a class="nav-link" >
                     <i class="fa fa-address-book" aria-hidden="true" style="color:#00008B;"></i>{{ __('Revisor') }}
@@ -168,7 +288,7 @@
             
              
                 @can('Reportes')
-              
+                
 
                 <li class="nav-item">
                     <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button"  aria-controls="navbar-examples">
