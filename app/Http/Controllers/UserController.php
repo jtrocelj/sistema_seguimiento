@@ -58,7 +58,6 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'unique:users,email,|required|email',
             'password' => ['required','min:8'],
-            'telefono' => 'required',
             'rol' => 'required',
     
             ]);
@@ -132,7 +131,6 @@ class UserController extends Controller
 
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->telefono = $request->telefono;
         $user->rol = $request->rol;
 
         $roles = $request->input('rol', []);

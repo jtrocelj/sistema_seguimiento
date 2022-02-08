@@ -31,7 +31,6 @@
           <div class="card bg-default shadow">
             <div class="card-header bg-transparent border-0">
               <h3 class="text-white mb-0">Tabla de usuarios</h3>
-            
             </div>
             <div class="table-responsive">
             @include("notificacion")
@@ -71,7 +70,6 @@
                                                 <th scope="col" class="sort" data-sort="budget">Id</th>
                                                 <th scope="col" width="10px" class="sort" data-sort="name">Nombre</th>
                                                 <th scope="col" class="sort" data-sort="budget">Email</th>
-                                                <th scope="col">Telefono</th>
                                                 <th scope="col">Rol</th>
                                                 <th scope="col">Accion</th>
                                                 <th scope="col">Estado</th>
@@ -79,11 +77,10 @@
                                                     <tbody class="list">
                                                         @foreach ($users as $user)
                                                             <tr>
-                                                                <td>{{ ++$i }}</td>
+                                                                <td>{{ $user->id }}</td>
                                                                 
                                                                 <td>{{ $user->name }}</td>
                                                                 <td>{{ $user->email }}</td>
-                                                                <td>{{ $user->telefono }}</td>
                                                                 <td>
                                                                     @forelse ($user->roles as $role)
                                                                       <span class="badge badge-info">{{ $role->name }}</span>
@@ -114,7 +111,7 @@
                                             
                                        
                                     </div>   @include('layouts.footers.auth')
-                                    {!! $users->links() !!}
+                                  
                                 </div>
                             </div>
                         </div>

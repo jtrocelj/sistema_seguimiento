@@ -54,16 +54,6 @@
                                     @endif
                                 </div>
                             
-                                <div class="form-group{{ $errors->has('telefono') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-telefono">{{ __('Telefono') }}</label>
-                                    <input type="text" name="telefono" id="input-telefono"  value="{{old('telefono')}}"  class="form-control form-control-alternative{{ $errors->has('telefono') ? ' is-invalid' : '' }}" placeholder="{{ __('Telefono') }}"  maxlength="8" >
-
-                                    @if ($errors->has('telefono'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('telefono') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
                                 <div class="form-group{{ $errors->has('rol') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-telefono">{{ __('Rol') }}</label>
                                     <select class="form-control"  name="rol">
