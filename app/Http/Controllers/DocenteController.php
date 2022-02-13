@@ -108,5 +108,17 @@ class DocenteController extends Controller
             
     }
 
+    public function destroy($id)
+    {
+        $docente = Docente::find($id);
+        $imageName = $docente->image;
+        $docente->delete();
+        if($imageName !=null){
+            unlink('storage/docente/' . $imageName);
+        }
+        return redirect()->route('docente.index')
+            ->with('eliminar', 'Docente eliminado exitosamente.');
+    }
+
 
 }
