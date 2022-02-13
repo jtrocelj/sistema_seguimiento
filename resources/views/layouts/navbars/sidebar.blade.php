@@ -161,11 +161,29 @@ ul ul a {
                         <ul class=" list-unstyled components">
                             <li class="active">
                                 <a class="nav-link active" href="#homeSubmenu" data-toggle="collapse"  role="button" aria-expanded="false">
+                                <i class="fa fa-address-card" aria-hidden="true" style="color:#00008B;"></i>
+                                <span class="nav-link-text" >{{ __('Listado') }}</span>
+                                </a>
+                                <ul class="collapse list-unstyled" id="homeSubmenu">
+                                <li nav-item><a  class="nav-link" href="{{route('docente.index')}}">{{ __('Docentes') }}</a></li>
+                                <li nav-item><a  class="nav-link" href="#">{{ __('Tutores') }}</a></li>
+                                <li nav-item><a  class="nav-link" href="#">{{ __('Revisores') }}</a></li>
+                                <li nav-item><a  class="nav-link" href="#">{{ __('Estudiantes') }}</a></li>
+                                </ul>
+                            </li>
+                          
+                        </ul>
+                </li>
+            <li class="nav-item">
+                
+                        <ul class=" list-unstyled components">
+                            <li class="active">
+                                <a class="nav-link active" href="#homeSubmenu11" data-toggle="collapse"  role="button" aria-expanded="false">
                                 <i class="fa fa-university" style="color:#00008B;"></i>
                                 <span class="nav-link-text" >{{ __('Docentes') }}</span>
                                 </a>
-                                <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li nav-item><a  class="nav-link" href="{{route('docente.index')}}">{{ __('Listado') }}</a></li>
+                                <ul class="collapse list-unstyled" id="homeSubmenu11">
+                                <li nav-item><a  class="nav-link" href="#">{{ __('Seguimiento') }}</a></li>
                                 <li nav-item><a  class="nav-link" href="#">{{ __('Datos Personales') }}</a></li>
                                
                                 </ul>
@@ -183,28 +201,51 @@ ul ul a {
                         <span class="nav-link-text" >{{ __('Tutor') }}</span>
                         </a>
                         <ul class="collapse list-unstyled" id="homeSubmenu22">
-                        <li nav-item><a  class="nav-link" >{{ __('Listado') }}</a></li>
+                        <li nav-item><a  class="nav-link" href="#">{{ __('Seguimiento') }}</a></li>
                         <li nav-item><a  class="nav-link" href="#">{{ __('Datos Personales') }}</a></li>
                        
                         </ul>
                     </li>
                   
                 </ul>
-        </li>
+             </li>
               
 
+             <li class="nav-item">
                 
-                <li class="nav-item">
-                    <a class="nav-link" >
-                    <i class="fa fa-address-book" aria-hidden="true" style="color:#00008B;"></i>{{ __('Revisor') }}
-                    </a>
-                </li>
+                <ul class=" list-unstyled components">
+                    <li class="active">
+                        <a class="nav-link active" href="#homeSubmenu33" data-toggle="collapse"  role="button" aria-expanded="false">
+                        <i class="fa fa-address-book" aria-hidden="true" style="color:#00008B;"></i>{{ __('Revisor') }}
+                        </a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu33">
+                        <li nav-item><a  class="nav-link" href="#">{{ __('Seguimiento') }}</a></li>
+                        <li nav-item><a  class="nav-link" href="#">{{ __('Datos Personales') }}</a></li>
+                       
+                        </ul>
+                    </li>
+                  
+                </ul>
+             </li>
+
+             <li class="nav-item">
+                
+                <ul class=" list-unstyled components">
+                    <li class="active">
+                        <a class="nav-link active" href="#homeSubmenu44" data-toggle="collapse"  role="button" aria-expanded="false">
+                        <i class="fa fa-user-plus" aria-hidden="true" style="color:#00008B;"></i>{{ __('Estudiantes') }}
+                        </a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu44">
+                        <li nav-item><a  class="nav-link" href="#">{{ __('Seguimiento') }}</a></li>
+                        <li nav-item><a  class="nav-link" href="#">{{ __('Datos Personales') }}</a></li>
+                       
+                        </ul>
+                    </li>
+                  
+                </ul>
+             </li>
                
-                <li class="nav-item">
-                    <a class="nav-link" >
-                    <i class="fa fa-user-plus" aria-hidden="true" style="color:#00008B;"></i>{{ __('Estudiantes') }}
-                    </a>
-                </li>
+               
                 @can('Categorias')
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('categoria.index')}}">

@@ -2,7 +2,7 @@
     @include('layouts.headers.cards')
     
     @extends('layouts.main')
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="//cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
 
 <script  src="//code.jquery.com/jquery-3.5.1.js"></script>
@@ -10,15 +10,10 @@
 
 <script src="//cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-<script src="//cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
-<script src="//cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/datatables-buttons-excel-styles@1.2.0/js/buttons.html5.styles.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/datatables-buttons-excel-styles@1.2.0/js/buttons.html5.styles.templates.min.js"></script>
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -46,6 +41,15 @@
     
     <!-- Page content -->
     <div class="container-fluid mt--9 ">
+                                      @if (Session::get('eliminar'))
+                                        <script>
+                                          Swal.fire(
+                                              'Satisfactorio',
+                                              'Docente eliminado exitosamente.',
+                                              'success'
+                                          )
+                                        </script>
+                                      @endif
      
                                       @if (Session::get('registroDocente'))
                                         <script>
@@ -124,8 +128,8 @@
                                                                             ><a></a><i class="fa fa-fw fa-trash"></i></button>
                                                 
                                                                         </td>
-                                                                        @include('docente.edit')
-                                                                      @include('docente.delete')
+                                                                        <h3>@include('docente.edit')</h3>
+                                                                        <h3>@include('docente.delete')</h3>
                                                                         
                                                                               
                                                                     </tr>
