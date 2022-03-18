@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@include('layouts.headers.cards2')
+@include('layouts.headers.cards')
 @section('template_title')
     {{ $user->name ?? 'Show User' }}
 @endsection
